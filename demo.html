@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Circular Graph</title>
+	<style>
+	  body {
+    	background-color:#b4b1b1;
+    }
+    
+    #wrapper {
+    	width:240px;
+    	height:360px;
+    	position:fixed;
+    	left:50%;
+    	top:50%;
+    	margin-top:-180px;
+    	margin-left:-120px;
+    }
+    
+    #outer_layer {
+    	background-color:#CCC;
+    	width:240px;
+    	height:240px;
+    	border-radius:50%;
+    	position:absolute;
+    	overflow:hidden;
+    	top:0;
+    	left:0;
+    	border:3px solid #CCC;
+    }
+    
+    #inner_layer {
+    	background-color:#999;
+    	width:180px;
+    	height:180px;
+    	position:absolute;
+    	top:30px;
+    	left:30px;
+    	border-radius:50%;
+    	z-index:5;
+    }
+    
+    #progress_bar_left {
+    	background-color:#b4b1b1;
+    	width:120px;
+    	height:240px;
+    	border-top-left-radius:120px;
+    	border-bottom-left-radius:120px;
+    	z-index:2;
+    	overflow:hidden;
+    }
+    
+    #progress_bar_right {
+    	width:240px;
+    	height:240px;
+    	position:absolute;
+    	border-top-right-radius:120px;
+    	border-bottom-right-radius:120px;
+    	z-index:4;
+    	right:0px;
+    	top:0px;
+    	transform:rotate(150deg);
+    	-ms-transform:rotate(150deg);
+    	-webkit-transform:rotate(150deg);
+    	-moz-transform:rotate(150deg); 
+    	-webkit-animation: animation 4s;
+    	-moz-animation: animation 4s;
+    	-o-animation: animation 4s;
+    	animation: animation 4s;
+    }
+    	
+    	@keyframes animation {
+    		from {transform:rotate(0deg); }
+    		to {transform:rotate(150deg); }
+    	}
+    
+    	@-moz-keyframes animation {
+    		from {-moz-transform:rotate(0deg); }
+    		to {-moz-transform:rotate(150deg); }
+    	}
+    	
+    	@-o-keyframes animation {
+    		from {-o-transform:rotate(0deg); }
+    		to {-o-transform:rotate(150deg); }
+    	}
+    
+    	@-webkit-keyframes animation {
+    		from {-webkit-transform:rotate(0deg); }
+    		to {-webkit-transform:rotate(150deg); }
+    	}
+    
+    #progress_bar_right .inner {
+    	background-color:#b4b1b1;
+        	width:120px;
+    	height:240px;
+    	position:absolute;
+    	border-top-right-radius:120px;
+    	border-bottom-right-radius:120px;
+    	z-index:4;
+    	right:0px;
+    	top:0px;
+    }
+    
+    #message {
+    	width:240px;
+    	height:80px;
+    	position:absolute;
+    	overflow:hidden;
+    	bottom:0;
+    	left:0;
+    	margin-top:-45px;
+    	text-align:center;
+    	color:#555;
+    	font-family:calibri;
+    	font-size:90%;
+    }
+      
+	</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="outer_layer">
+			<div id="inner_layer">
+			</div>
+			
+			<div id="progress_bar_left">
+				<div class="inner"></div>
+			</div>
+			<div id="progress_bar_right">
+				<div class="inner"></div>
+			</div>
+		</div>
+		
+		<div id="message">
+			<b>Circular Graph</b>
+		</div>
+	</div>
+</body>
